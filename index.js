@@ -1,6 +1,3 @@
-
-
-
 const btn = document.getElementById("addBtn");
 const input = document.getElementById("commentInput");
 const list = document.getElementById("commentList");
@@ -26,17 +23,14 @@ btn.addEventListener("click", function () {
   }
 
   const items = list.getElementsByTagName("li");
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].innerText === text) {
-      alert("This Comment Already Add");
-      return;
-    }
+  for (let i = 0; i < comments.length; i++) {
+  if (comments[i].text === text) {
+    alert("This Comment Already Add");
+    return;
   }
+}
 
-  // ID generate
   const id = Math.random().toString(36).substring(2, 9);
-
-  // object create
   const commentObj = {
     id: id,
     text: text
@@ -45,8 +39,6 @@ btn.addEventListener("click", function () {
   comments.push(commentObj);
 
   console.log(comments);
-
-  // UI show (ID আগে, text পরে)
   const li = document.createElement("li");
  li.innerText = id + " (" + text +")";
   list.appendChild(li);

@@ -39,6 +39,7 @@ btn.addEventListener("click", function () {
   comments.push(commentObj);
 
   console.log(comments);
+  
   const li = document.createElement("li");
  li.innerText = id + " (" + text +")";
   list.appendChild(li);
